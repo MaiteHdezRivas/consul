@@ -57,6 +57,10 @@ module CommentableActions
     end
   end
 
+  def suggest 
+    render :suggest
+  end  
+
   private
 
     def track_event

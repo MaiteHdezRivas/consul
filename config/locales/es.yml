@@ -153,6 +153,11 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+    suggest:
+      title: "Quiza existan ya debates similares" 
+      debate_title: "Términos a buscar"
+      instruction_one: "Antes de iniciar un nuevo debate dinos sobre que trata, puede que ya exista uno similar."
+      instruction_two: "Si ninguna de nuestras propuestas te convence puedes iniciar un nuevo debate."
   proposals:
     index:
       title: "Propuestas ciudadanas"
@@ -242,6 +247,11 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+    suggest:
+      title: "Quiza existan ya propuestas similares" 
+      proposal_title: "Términos a buscar"
+      instruction_one: "Antes de realizar una nueva propuesta dinos sobre que trata, puede que ya exista una similar."
+      instruction_two: "Si ninguna de nuestras sugerencias te convence puedes iniciar una nueva propuesta."
   comments:
     select_order: "Ordenar por"
     orders:

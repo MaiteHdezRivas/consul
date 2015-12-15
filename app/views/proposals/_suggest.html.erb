@@ -1,0 +1,15 @@
+
+  <div class="small-12 column">
+      <%= label :instructions, t("proposals.suggest.title") %>
+      <p class="note"><%= t("proposals.suggest.instruction_one") %></p>
+      <p class="note"><%= t("proposals.suggest.instruction_two") %></p>
+    </div>
+  <div class="row">
+    <div class="small-12 column">
+      <%= label :title, t("proposals.suggest.proposal_title") %>
+      <%= text_field :title, maxlength: Debate.title_max_length, placeholder: t("proposals.suggest.proposal_title"), label: false %>
+    </div>
+  </div>
+
+
+

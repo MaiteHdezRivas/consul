@@ -1,0 +1,26 @@
+
+  <div class="small-12 column">
+      <%= label :instructions, t("debates.suggest.title") %>
+      <p class="note"><%= t("debates.suggest.instruction_one") %></p>
+      
+  </div>
+  <div class="row">
+    <div class="small-12 column">
+      <%= label :title, t("debates.suggest.debate_title") %>
+      <%= text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.suggest.debate_title"), label: false %>
+    </div>
+    <div class="small-12 column">
+     <br>. . . . . 
+        Aqui irán los terminos encontrados
+        .........
+     <br>. . . . . 
+        Aqui irán los terminos encontrados
+        .........
+     <br>
+     <br>
+
+      <p class="note"><%= t("debates.suggest.instruction_two") %></p>
+     </div>S
+  </div>
+
+

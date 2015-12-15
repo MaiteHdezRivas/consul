@@ -5,7 +5,7 @@ class Moderation::DebatesController < Moderation::BaseController
   has_orders %w{flags created_at}, only: :index
 
   before_action :load_resources, only: [:index, :moderate]
-
+  debugger
   load_and_authorize_resource
 
   private

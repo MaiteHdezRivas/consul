@@ -1,0 +1,29 @@
+  <section role="main">
+  <div class="wrap row">
+    <div id="suggest" class="debates-list small-12 medium-9 column">
+
+        <% unless @tag_filter || @search_terms %>
+          <%= render "featured_debates_static" %>
+        <% end %>
+      </div>
+    <div class="small-12 medium-9 column">
+        <%= render "suggest" %>
+               <aside class="sidebar" role="complementary">
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+      </aside>
+  </div>
+ 
+
+  <div class="small-12 medium-3 column">
+    <i class="icon-debates right"></i>
+    <h2><%= t("debates.new.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("debates.new.recommendation_one") %></li>
+      <li><%= t("debates.new.recommendation_two") %></li>
+      <li><%= t("debates.new.recommendation_three") %></li>
+      <li><%= t("debates.new.recommendation_four") %></li>
+    </ul>
+  </div>
+</div>
+
+    </div>

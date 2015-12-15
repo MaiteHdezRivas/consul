@@ -153,6 +153,11 @@ en:
     update:
       form:
         submit_button: "Save changes"
+    suggest:
+      title: "Maybe there are already similar debates" 
+      debate_title: "Search terms"
+      instruction_one: "Before starting a new debate, tell us about that is, it may already exist a similar."
+      instruction_two: "If none of our suggestions convince you, you can start a new debate."
   proposals:
     index:
       title: "Proposals"
@@ -242,6 +247,11 @@ en:
     update:
       form:
         submit_button: "Save changes"
+    suggest:
+      title: "Similar proposals may already exist" 
+      proposal_title: "Search term"
+      instruction_one: "Before making a new proposal , tell us about that is , it may already exist similar."
+      instruction_two: "If none of our suggestions convinces you can start a new proposal."
   comments:
     select_order: "Sort by"
     orders:
