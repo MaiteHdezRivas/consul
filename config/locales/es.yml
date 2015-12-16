@@ -7,14 +7,14 @@ es:
     header:
       logo: "Madrid"
       external_link_transparency: "Transparencia"
-      external_link_transparency_url: "https://transparencia.madrid.es"
+      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: "Datos abiertos"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
-      participation_html: "Madrid Decide"
+      participation_html: "Madrid <strong>Decide</strong>"
       open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
@@ -26,9 +26,10 @@ es:
       locale: "Idioma:"
       administration: "Administrar"
       moderation: "Moderar"
+      # highlights: "Portada"
       more_information: "Más información"
       debates: "Debates"
-      proposals: "Propuestas"
+      proposals: "Propuestas ciudadanas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -75,12 +76,24 @@ es:
     verification::letter: "la verificación"
   application:
     close: "Cerrar"
-    menu: "Menú"
+    menu: "Menú"  
+  debate_links:
+    new:
+      share_debate: "Comparte un enlace"
+      form:
+        submit_button: "Compartir enlace"
+    form:
+      debate_external_link: "Enlace"
+      external_link: "Enlace"
+    create:
+      form:
+        submit_button: "Compartir enlace"    
   debates:
     index:
       title: "Debates"
       featured_debates_html: "Debates<br>destacados"
       start_debate: "Empieza un debate"
+      share_debate: "Comparte un enlace" 
       select_order: "Ordenar por"
       select_order_long: "Estás viendo los debates"
       orders:

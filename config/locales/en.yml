@@ -7,14 +7,14 @@ en:
     header:
       logo: "Madrid"
       external_link_transparency: "Transparency"
-      external_link_transparency_url: "https://transparencia.madrid.es"
+      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: "Open data"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
       external_link_blog_url: "/blog"
-      open_gov: "Open government"
+      open_gov: "%{open} government"
       open: "open"
-      participation_html: "Madrid Decide"
+      participation_html: "Madrid <strong>Decide</strong>"
       open_data: "Open data"
       open_city_title: "Love the city, and it will become a city you love."
       open_city_slogan_html:
@@ -26,9 +26,10 @@ en:
       locale: "Language:"
       administration: "Administration"
       moderation: "Moderation"
+      # highlights: "Highlights"
       more_information: "More information"
       debates: "Debates"
-      proposals: "Proposals"
+      proposals: "Citizen proposals"
     footer:
       description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
       open_source: "open-source software"
@@ -73,14 +74,26 @@ en:
     proposal: "Proposal"
     verification::sms: "Telephone"
     verification::letter: "the verification"
-  application:
+  application: 
     close: "Close"
     menu: "Menu"
+  debate_links:
+    new:
+      share_debate: "Share a link"
+      form:
+        submit_button: "Share link"
+    form:
+      debate_external_link: "Link"
+      external_link: "Link"
+    create:
+      form:
+        submit_button: "Share link"
   debates:
     index:
       title: "Debates"
       featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
+      share_debate: "Share a link" 
       select_order: "Order by"
       select_order_long: "You are viewing debates according to:"
       orders:
