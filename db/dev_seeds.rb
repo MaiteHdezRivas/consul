@@ -149,7 +149,6 @@ tags = Faker::Lorem.words(25)
   puts "    #{proposal.title}"
 end
 
-
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
@@ -299,3 +298,21 @@ puts "Confirming hiding in debates, comments & proposals"
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
+
+puts "Posting banners"
+
+Setting.create(key: 'banner.banner_one', value: "Estilo uno")
+Setting.create(key: 'banner.banner_two', value: "Estilo dos")
+Setting.create(key: 'banner.banner_three', value: "Estilo tres")
+
+(1..3).each do |i|
+  text = "#{Faker::Lorem.paragraphs}"
+  banner = Banner.create!(    title: Faker::Lorem.sentence(1).truncate(40),
+                              text:  text,
+                              style: "banner.banner-one",
+                              link:  "localhost:3000/proposal/#{i}",
+                              post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
+                              post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
+                              created_at: rand((Time.now - 1.week) .. Time.now))
+  puts "    #{banner.title}"
+end

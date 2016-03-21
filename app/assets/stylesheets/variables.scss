@@ -6,6 +6,7 @@
 // 04. Alerts
 // 05. Levels
 // 06. Responsive
+// 07. Banners 
 //
 
 // 01. Typography
@@ -133,3 +134,10 @@ $small-breakpoint:  rem-calc(640);
 $medium-breakpoint: rem-calc(1024);
 $large-breakpoint:  rem-calc(1440);
 $xlarge-breakpoint: rem-calc(1920);
+
+// 07. Banners
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$banner_one-bg:     #FED900;
+$banner_two-bg:     #33DADF;
+$banner_three-bg:   #454372;

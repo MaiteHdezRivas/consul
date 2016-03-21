@@ -7,6 +7,31 @@ es:
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
+    banners:
+      index:
+        title: Publicar anuncios
+        active: Activo
+        inactive: Inactivo
+        create: Crear un banner
+        edit: Editar banner
+        delete: Eliminar banner
+      banner:
+        title: Título
+        text:  Descripción
+        link:  Enlace 
+        style: Estilo
+        post_started_at: Inicio de publicación
+        post_ended_at: Fin de publicación
+      edit: 
+        back: Volver
+        editing: Editar el banner
+        form:
+          submit_button: Guardar Cambios
+      new: 
+        back: Volver
+        creating: Crear banner
+        form:
+          submit_button: Crear banner
     activity:
       show:
         action: Acción
@@ -47,6 +72,7 @@ es:
         title: Debates ocultos
     menu:
       activity: Actividad de moderadores
+      banner: Publicar banner 
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
@@ -141,6 +167,7 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        banners: "Estilos de banners"
     shared:
       proposal_search:
         button: Buscar
