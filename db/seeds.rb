@@ -60,3 +60,8 @@ Setting['feature.public_stats'] = true
 
 # Max length for comments
 Setting['comments_body_max_length'] = 1000
+
+# Banners  
+Setting['banner.banner-one']   = "Banner with style one"
+Setting['banner.banner-two']   = "Banner with style two"
+Setting['banner.banner-three'] = "Banner with style three"

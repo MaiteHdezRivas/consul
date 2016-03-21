@@ -7,6 +7,39 @@ en:
       hide: Hide
       hide_author: Hide author
       restore: Restore
+    banners:
+      index:
+        title: Post banners
+        active: Active
+        inactive: Inactive
+        create: Create  a banner
+        edit: Edit a banner
+        delete: Delete a banner
+      banner:
+        title: Title
+        text:  Description
+        link:  Link 
+        style: Style 
+        post_started_at: Post started at
+        post_ended_at: Post ended at 
+      edit: 
+        back: Back
+        editing: Edit banner
+        form:
+          submit_button: Save changes
+      errors:
+        form:
+      errors:
+        form:
+          error:
+            one: "prevented this banner from being saved"
+            other: 'prevented this banner from being saved'
+      new: 
+        back: Back
+        creating: Create banner
+        form:
+          submit_button: Create banner
+    
     activity:
       show:
         action: Action
@@ -47,6 +80,7 @@ en:
         title: Hidden debates
     menu:
       activity: Moderator activity
+      banner: Publish banner
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
@@ -141,6 +175,7 @@ en:
           disabled: "Feature disabled"
           enable: "Enable"
           disable: "Disable"
+        banners: "Banner style"
     shared:
       proposal_search:
         button: Search

@@ -136,6 +136,10 @@ Rails.application.routes.draw do
         patch :assign_valuators
       end
     end
+ 
+    resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
+      collection { get :search}
+    end
 
     resources :comments, only: :index do
       member do

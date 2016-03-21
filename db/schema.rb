@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315092854) do
+ActiveRecord::Schema.define(version: 20160401180429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,20 @@ ActiveRecord::Schema.define(version: 20160315092854) do
 
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "title",           limit: 80
+    t.string   "text"
+    t.string   "link"
+    t.string   "style"
+    t.datetime "post_started_at"
+    t.datetime "post_ended_at"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -120,6 +134,7 @@ ActiveRecord::Schema.define(version: 20160315092854) do
     t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
+    t.datetime "featured_at"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -228,6 +243,21 @@ ActiveRecord::Schema.define(version: 20160315092854) do
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
+  create_table "open_answers", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "question_code"
+    t.integer  "user_id"
+    t.integer  "survey_code"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.integer  "confidence_score",   default: 0
+  end
+
+  add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name",             limit: 60
@@ -275,6 +305,16 @@ ActiveRecord::Schema.define(version: 20160315092854) do
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
+  create_table "redeemable_codes", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "geozone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "redeemable_codes", ["geozone_id"], name: "index_redeemable_codes_on_geozone_id", using: :btree
+  add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -315,6 +355,16 @@ ActiveRecord::Schema.define(version: 20160315092854) do
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+
+  create_table "survey_answers", force: :cascade do |t|
+    t.string   "survey_code"
+    t.json     "answers"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "survey_answers", ["user_id"], name: "index_survey_answers_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -417,12 +467,14 @@ ActiveRecord::Schema.define(version: 20160315092854) do
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
+    t.datetime "password_changed_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
+  add_index "users", ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "valuation_assignments", force: :cascade do |t|
@@ -508,6 +560,7 @@ ActiveRecord::Schema.define(version: 20160315092854) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "survey_answers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

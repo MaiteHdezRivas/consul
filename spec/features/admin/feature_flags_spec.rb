@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin feature flags' do
 
-  background do
+  background do 
     login_as(create(:administrator).user)
   end
 

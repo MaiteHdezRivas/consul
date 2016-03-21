@@ -311,4 +311,11 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+  
+  factory :banner do
+    sequence(:title) { |n| "Banner title #{n}" }
+    sequence(:text)  { |n| "This is the text of Banner #{n}" }
+    sequence(:style) { |n| "banner.banner-#{n}" }
+    link "www.myurl.com"
+  end
 end
