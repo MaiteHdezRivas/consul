@@ -7,8 +7,8 @@ es:
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
-      feature: Destacar
-      remove_feature: Quitar destacado
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
     activity:
       show:
         action: Acción
@@ -77,7 +77,9 @@ es:
       index:
         title: Evaluadores
       valuator:
-        add: Añadir
+        description_placeholder: "Descripción (opcional)"
+        user_found: Usuario encontrado
+        add: Añadir como evaluador
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar

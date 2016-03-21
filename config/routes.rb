@@ -36,8 +36,8 @@ Rails.application.routes.draw do
       post :vote
       put :flag
       put :unflag
-      put :remove_feature
-      put :feature
+      put :unmark_featured
+      put :mark_featured
     end
     collection do
       get :map
