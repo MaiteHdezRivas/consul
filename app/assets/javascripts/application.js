@@ -42,6 +42,9 @@
 //= require suggest
 //= require forms
 //= require valuation_spending_proposal_form
+//= require jquery-ui
+//= require jquery-colorpicker
+//= require date_picker
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -59,6 +62,7 @@ var initialize_modules = function() {
   App.Suggest.initialize();
   App.Forms.initialize();
   App.ValuationSpendingProposalForm.initialize();
+  App.Date_Picker.initialize();
 };
 
 $(function(){

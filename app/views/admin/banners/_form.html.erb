@@ -1,0 +1,52 @@
+<%= form_for [:admin, @banner] do |f| %>
+  <div class="row">
+    <div class="small-12 column">
+       <%= f.label :title, t("admin.banners.banner.title") %>
+      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false%>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :text, t("admin.banners.banner.text") %>
+      <%= f.text_field :text,
+                        label: false,
+                        placeholder: t("admin.banners.banner.text") %>
+    </div>
+    <div class="small-12 column">
+      <%= f.label :link, t("admin.banners.banner.link") %>
+      <%= f.text_field :link,
+                        label: false,
+                        placeholder: t("admin.banners.banner.link") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :image, t("admin.banners.banner.image") %>
+      <%= f.text_field :image,
+                        label: false,
+                        placeholder: t("admin.banners.banner.image") %>
+    </div>
+
+    <div class="small-3 column">
+      <%= f.label :post_started_at, t("admin.banners.banner.post_started_at") %>
+      <%= f.datetime_field :post_started_at,
+                        label: false,
+                        placeholder: t("admin.banners.banner.post_started_at"),
+                        id: "post_started_at" %>
+    </div>
+
+    <div class="small-3 column">
+      <%= f.label :post_ended_at, t("admin.banners.banner.post_ended_at") %>
+      <%= f.datetime_field  :post_ended_at,
+                        label: false,
+                        placeholder: t("admin.banners.banner.post_ended_at"),
+                        id: "post_ended_at" %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("admin.banners.edit.form.submit_button")) %>
+    </div>
+  </div>
+
+  <div class="panel banner-three h2"> 
+    <h2 ><%= :title %></h2>
+  </div>
+<% end %>

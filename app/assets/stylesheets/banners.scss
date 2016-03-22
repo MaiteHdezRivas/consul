@@ -1,0 +1,64 @@
+// Place all the styles related to the banner controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 01. Banners
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.panel {
+  &.banner-one, &.banner-two, &.banner-three {
+    background-size: cover;
+    background-position: 50% 50%;
+    border: 0;
+    min-height: $line-height*10;
+    padding: $line-height;
+    position: relative;
+
+    h2, p {
+      color: $text;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+      margin-top: $line-height;
+    }
+  }
+
+  &.banner-one {
+    background: $banner_one-bg image-url('banners/banner1.png') no-repeat;
+    margin-top: $line-height;
+
+    .icon-proposals {
+      color: #e5c300;
+      font-size: rem-calc(128);
+      line-height: rem-calc(170);
+      position: absolute;
+      right: 2%;
+      top: 100px;
+    }
+  }
+
+  &.banner-two {
+    background: $banner_two-bg;
+    margin-bottom: 0;
+
+    @media (min-width: $medium-breakpoint) {
+      background: #00DADE image-url('banners/banner1.png') no-repeat;
+      background-position: 90% 50%;
+    }
+  }
+
+  &.banner-three {
+    background: $banner_three-bg;
+
+    @media (min-width: $medium-breakpoint) {
+      background: $budget image-url('banners/banner1_medium.png') no-repeat;;
+      background-position: bottom right;
+    }
+
+    h2, p {
+      color: #eaeaf2;
+    }
+  }
+}

@@ -7,6 +7,18 @@ en:
       hide: Hide
       hide_author: Hide author
       restore: Restore
+    banners:
+      index:
+        title: Post banners
+        active: Active
+        inactive: Inactive
+      banner:
+        title: Title
+        text:  Description
+        link:  Link 
+        image: Image 
+        post_started_at: Post started at
+        post_ended_at: Post ended at 
     activity:
       show:
         action: Action
@@ -47,6 +59,7 @@ en:
         title: Hidden debates
     menu:
       activity: Moderator activity
+      banner: Publish banner
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
