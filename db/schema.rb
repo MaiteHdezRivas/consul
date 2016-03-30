@@ -348,6 +348,8 @@ ActiveRecord::Schema.define(version: 20160330062927) do
     t.integer  "valuation_assignments_count",           default: 0
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
+    t.datetime "unfeasible_email_sent_at"
+    t.integer  "cached_votes_up"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
@@ -464,14 +466,12 @@ ActiveRecord::Schema.define(version: 20160330062927) do
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
-    t.datetime "password_changed_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
-  add_index "users", ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "valuation_assignments", force: :cascade do |t|

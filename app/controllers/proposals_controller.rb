@@ -17,6 +17,11 @@ class ProposalsController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def index
+    super
+    @banners = Banner.all
+  end
+
   def show
     super
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)

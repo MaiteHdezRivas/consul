@@ -1,0 +1,8 @@
+<% @banners.each do |banner|%>
+<div class="panel <%= banner.style %> margin-bottom">
+  <%= link_to banner.link do %>
+    <h2><%=banner.title%></h2>
+    <h3>Ya están disponibles los resultados de la encuesta</h3>
+  <% end %> 
+</div>
+<% end %>       
