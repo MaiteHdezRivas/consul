@@ -19,14 +19,19 @@ es:
         title: Título
         text:  Descripción
         link:  Enlace 
-        image: Imagen 
+        style: Estilo
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
       edit: 
         back: Volver
-        editing: Edit banner
+        editing: Editar el banner
         form:
           submit_button: Guardar Cambios
+      new: 
+        back: Volver
+        creating: Crear banner
+        form:
+          submit_button: Crear banner
     activity:
       show:
         action: Acción
@@ -162,6 +167,7 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        banners: "Estilos de banners"
     shared:
       proposal_search:
         button: Buscar

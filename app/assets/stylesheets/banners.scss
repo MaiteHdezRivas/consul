@@ -6,17 +6,21 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .panel {
-  &.banner_one {
-     background: $budget image-url('banners/banner1.png') no-repeat;
+
+  &.banner-one {
+     background: $banner_one-bg image-url('banners/banner1.png') no-repeat;
   }
-  &.banner_two {
-     background: #33DADF image-url('banners/banner2.gif') no-repeat;
+  &.banner-two {
+     background: $banner_two-bg image-url('banners/banner1.png') no-repeat;
   }
-  &.banner_three {
-     background: #33DADF image-url('banners/banner1.png') no-repeat;
+  &.banner-three {
+     background: $banner_three-bg image-url('banners/banner1.png') no-repeat;
+  }
+  &.banner-four {
+     background: $banner_four-bg image-url('banners/banner1.png') no-repeat;
   }
   
-  &.banner_one, &.banner_two, &.banner_three {
+  &.banner-one, &.banner-two, &.banner-three , &.banner-four {
     background-position: bottom right;
     padding: $line-height/2;
     margin: $line-height 0;

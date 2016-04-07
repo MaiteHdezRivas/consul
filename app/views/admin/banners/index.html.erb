@@ -3,7 +3,6 @@
 <p>
   <%= link_to t("admin.banners.index.create"),
               new_admin_banner_path,
-              method: :put,
               class: "button large success " %>
 </p>
 
@@ -13,12 +12,12 @@
   <% @banners.each do |banner| %>
     <tr id="<%= dom_id(banner) %>">
       <td>
-        <strong><%= banner.title %></strong>
-        <br>
-        <div class="moderation-description">
-          <%= banner.text %>
+        <div class="panel <%= banner_style(banner.style) %> clear margin-bottom">
+          <%= link_to banner.link do %>
+            <h2><%= banner.title %></h2>
+            <h3><%= banner.text %></h3>
+         <% end %>
         </div>
-        <br>
         <div><%= t("admin.banners.banner.post_started_at")%> <%= banner.updated_at %> 
              <%= t("admin.banners.banner.post_ended_at")%> <%= banner.created_at%>
         </div>
