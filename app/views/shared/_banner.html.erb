@@ -1,7 +1,7 @@
 <% banner = @banners.sample%>
-<div class="panel <%= banner_style(banner.style) %> margin-bottom">
+<div class="<%= banner_style(banner.style) %>">
   <%= link_to banner.link do %>
     <h2><%=banner.title%></h2>
-    <h3>Ya están disponibles los resultados de la encuesta</h3>
+    <h3><%=banner.text%></h3>
   <% end %> 
 </div>

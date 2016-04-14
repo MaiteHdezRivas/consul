@@ -1,20 +1,27 @@
 <%= form_for [:admin, @banner] do |f| %>
-  
-  <div class="small-3 column">
-    <%= f.label :style, t("admin.banners.banner.style") %>
-    <%= f.select_tag(:style, options_for_select(@banner_styles, @banner.style)) %>
-  </div>
+
+  <%= render 'errors' %>
 
   <div class="row">
+    <div class="small-3 column">
+    <%= f.label :style, t("admin.banners.banner.style") %>
+    <%= f.select :style, options_for_select(@banner_styles, @banner.style),
+                      label: false,placeholder: t("admin.banners.banner.style"),
+                      data: {js_banner_style: "js_banner_style"}
+                       %>
+    </div>
+
     <div class="small-12 column">
-       <%= f.label :title, t("admin.banners.banner.title") %>
-      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false%>
+      <%= f.label :title, t("admin.banners.banner.title") %>
+      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false, data: {js_banner_title: "js_banner_title"}
+      %>
     </div>
 
     <div class="small-12 column">
       <%= f.label :text, t("admin.banners.banner.text") %>
       <%= f.text_field :text,
-                        label: false,
+                        label: false, 
+                        data: {js_banner_text: "js_banner_text"},
                         placeholder: t("admin.banners.banner.text") %>
     </div>
 
@@ -45,8 +52,11 @@
       <%= f.submit(class: "button", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
   </div>
-  
+
+  <div id="js-banner-style" class="panel <%= banner_style(@banner.style) %> clear margin-bottom">
+    <%= link_to @banner.link do %>
+      <h2 id="js-banner-title"><%= @banner.title %></h2>
+      <h3 id="js-banner-text"><%= @banner.text %></h3>
+    <% end %>
+  </div>
 <% end %>
- <div class="panel banner-three"> 
-      <h2><%= :title %></h2>
-    </div>

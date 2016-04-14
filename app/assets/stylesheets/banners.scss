@@ -5,27 +5,27 @@
 // 01. Banners
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.panel {
+.banner-one {
+  background: $featured image-url('banners/banner1.png') no-repeat;
+}
 
-  &.banner-one {
-     background: $banner_one-bg image-url('banners/banner1.png') no-repeat;
-  }
-  &.banner-two {
-     background: $banner_two-bg image-url('banners/banner1.png') no-repeat;
-  }
-  &.banner-three {
-     background: $banner_three-bg image-url('banners/banner1.png') no-repeat;
-  }
-  &.banner-four {
-     background: $banner_four-bg image-url('banners/banner1.png') no-repeat;
-  }
-  
-  &.banner-one, &.banner-two, &.banner-three , &.banner-four {
-    background-position: bottom right;
-    padding: $line-height/2;
-    margin: $line-height 0;
-    margin-top: 0;
-  }
+.banner-two {
+   background: $highlight image-url('banners/banner2.png') no-repeat;
+}
+
+.banner-three {
+   background: $budget image-url('banners/banner3.png') no-repeat;
+}
+
+.banner-four {
+   background: $brand image-url('banners/banner4.png') no-repeat;
+}
+
+.banner-one, .banner-two, .banner-three, .banner-four {
+  background-position: bottom right;
+  padding: $line-height/2;
+  margin: 0;
+  margin-bottom: $line-height;
 
   h2, h3, a {
     color: #eaeaf2;
@@ -35,5 +35,4 @@
     color: #eaeaf2 !important;
     text-decoration: none;
   }
-
 }

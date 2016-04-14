@@ -39,7 +39,8 @@ module Abilities
 
       can [:read, :update], SpendingProposal
 
-      can [:search, :create, :index, :destroy], Banner
+      can [:search, :edit, :update, :create, :index, :destroy], Banner
     end
   end
 end
+  

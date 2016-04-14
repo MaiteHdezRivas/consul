@@ -27,6 +27,11 @@ es:
         editing: Editar el banner
         form:
           submit_button: Guardar Cambios
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el banner"
+            other: "errores impidieron guardar el banner."
       new: 
         back: Volver
         creating: Crear banner

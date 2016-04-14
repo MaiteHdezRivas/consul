@@ -1,10 +1,4 @@
 FactoryGirl.define do
-  factory :banner do
-    title "MyString"
-    text "MyText"
-    image "MyString"
-    link "MyString"
-  end
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
@@ -316,5 +310,12 @@ FactoryGirl.define do
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
+  end
+  
+  factory :banner do
+    sequence(:title) { |n| "Banner title #{n}" }
+    sequence(:text)  { |n| "This is the text of Banner #{n}" }
+    sequence(:style) { |n| "banner.banner-#{n}" }
+    link "www.myurl.com"
   end
 end

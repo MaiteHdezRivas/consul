@@ -26,6 +26,10 @@ Setting.create(key: 'feature.google_login', value: "true")
 
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
+Setting.create(key: 'banner.banner-one', value: "Estilo uno")
+Setting.create(key: 'banner.banner-two', value: "Estilo dos")
+Setting.create(key: 'banner.banner-three', value: "Estilo tres")
+
 puts "Creating Geozones"
 ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
 
@@ -299,18 +303,14 @@ Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
-puts "Posting banners"
-
-Setting.create(key: 'banner.banner-one', value: "Estilo uno")
-Setting.create(key: 'banner.banner-two', value: "Estilo dos")
-Setting.create(key: 'banner.banner-three', value: "Estilo tres")
+puts "Publishing banners"
 
 (1..3).each do |i|
   text = "#{Faker::Lorem.paragraphs}"
   banner = Banner.create!(    title: Faker::Lorem.sentence(1).truncate(40),
                               text:  text,
                               style: "banner.banner-one",
-                              link:  "localhost:3000/proposal/#{i}",
+                              link:  "http://localhost:3000/proposal/#{i}",
                               post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
                               post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
                               created_at: rand((Time.now - 1.week) .. Time.now))

@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Admin settings' do
 
   background do
+    puts Setting.all.count
     @setting1 = create(:setting)
     @setting2 = create(:setting)
     @setting3 = create(:setting)
@@ -18,6 +19,10 @@ feature 'Admin settings' do
   end
 
   scenario 'Update' do
+    puts @setting2.key  
+    puts "#edit_setting_#{@setting2.id}"
+    puts "setting_#{@setting2.id}"
+    
     visit admin_settings_path
 
     within("#edit_setting_#{@setting2.id}") do
