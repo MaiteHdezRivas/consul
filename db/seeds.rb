@@ -61,7 +61,12 @@ Setting['feature.public_stats'] = true
 # Max length for comments
 Setting['comments_body_max_length'] = 1000
 
-# Banners  
-Setting['banner.banner-one']   = "Banner with style one"
-Setting['banner.banner-two']   = "Banner with style two"
-Setting['banner.banner-three'] = "Banner with style three"
+# Banner styles  
+Setting['banner-style.banner-style-one']   = "Banner con estilo uno"
+Setting['banner-style.banner-style-two']   = "Banner con estilo dos"
+Setting['banner-style.banner-style-three'] = "Banner con estilo tres"
+
+# Banner images  
+Setting['banner-img.banner-img-one']   = "Banner con imagen uno"
+Setting['banner-img.banner-img-two']   = "Banner con imagen dos"
+Setting['banner-img.banner-img-three'] = "Banner con imagen tres"

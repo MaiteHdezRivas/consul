@@ -2,14 +2,17 @@ class Setting < ActiveRecord::Base
   validates :key, presence: true, uniqueness: true
 
   default_scope { order(id: :asc) }
-  scope :banner,  -> { where("key ilike ?", "banner.%")}
+  scope :banner_style,  -> { where("key ilike ?", "banner-style.%")}
+  scope :banner_img,  -> { where("key ilike ?", "banner-img.%")}
 
 
   def type
     if feature_flag?
       'feature'
-    elsif banner?
-      'banner'
+    elsif banner_style?
+      'banner-style'
+    elsif banner_img?
+      'banner-img'
     else
       'common'
     end
@@ -19,10 +22,14 @@ class Setting < ActiveRecord::Base
     key.start_with?('feature.')
   end
 
-  def banner?
-    key.start_with?('banner.')
+  def banner_style?
+    key.start_with?('banner-style.')
   end
-  
+
+  def banner_img?
+    key.start_with?('banner-img.')
+  end
+
   def enabled?
     feature_flag? && value.present?
   end

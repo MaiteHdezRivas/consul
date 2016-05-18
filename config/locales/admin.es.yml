@@ -15,11 +15,17 @@ es:
         create: Crear un banner
         edit: Editar banner
         delete: Eliminar banner
+        filter: Filtro
+        filters:
+          all: Todos
+          with_active: Activos
+          with_inactive: Inactivos
       banner:
         title: Título
-        text:  Descripción
-        link:  Enlace 
+        description:  Descripción
+        target_url:  Enlace 
         style: Estilo
+        image: Imagen
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
       edit: 
@@ -173,6 +179,7 @@ es:
           enable: "Activar"
           disable: "Desactivar"
         banners: "Estilos de banners"
+        banner_imgs: "Imágenes para los banners"
     shared:
       proposal_search:
         button: Buscar

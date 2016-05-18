@@ -314,8 +314,11 @@ FactoryGirl.define do
   
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
-    sequence(:text)  { |n| "This is the text of Banner #{n}" }
-    sequence(:style) { |n| "banner.banner-#{n}" }
-    link "www.myurl.com"
+    sequence(:description)  { |n| "This is the text of Banner #{n}" }
+    style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
+    image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
+    target_url "/proposals" 
+    post_started_at Time.now - 7.days 
+    post_ended_at Time.now + 7.days 
   end
 end

@@ -36,7 +36,7 @@
 <h2><%= t("admin.settings.index.banners") %></h2>
 
 <ul class="admin-list">
-  <% @banners.each do |setting| %>
+  <% @banner_styles.each do |setting| %>
     <li>
       <strong><%= t("settings.#{setting.key}") %></strong>
 
@@ -48,10 +48,10 @@
   <% end %>
 </ul>
 
-<h2><%= t("admin.settings.index.banners") %></h2>
+<h2><%= t("admin.settings.index.banner_imgs") %></h2>
 
 <ul class="admin-list">
-  <% @banners.each do |setting| %>
+  <% @banner_imgs.each do |setting| %>
     <li>
       <strong><%= t("settings.#{setting.key}") %></strong>
 

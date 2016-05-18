@@ -11,7 +11,7 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
-    @banners = Banner.all.active
+    @banners = Banner.with_active
 
     set_resource_votes(@resources)
     set_resources_instance
@@ -68,8 +68,7 @@ module CommentableActions
     end
   end
 
-
-   def map
+  def map
     @resource = resource_model.new
     @tag_cloud = tag_cloud
   end

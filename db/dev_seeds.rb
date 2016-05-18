@@ -26,10 +26,6 @@ Setting.create(key: 'feature.google_login', value: "true")
 
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
-Setting.create(key: 'banner.banner-one', value: "Estilo uno")
-Setting.create(key: 'banner.banner-two', value: "Estilo dos")
-Setting.create(key: 'banner.banner-three', value: "Estilo tres")
-
 puts "Creating Geozones"
 ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
 
@@ -279,7 +275,7 @@ puts "Creating Valuation Assignments"
 end
 
 puts "Creating Legislation"
-
+2
 Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
 
 
@@ -305,14 +301,27 @@ Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
 puts "Publishing banners"
 
-(1..3).each do |i|
-  text = "#{Faker::Lorem.paragraphs}"
-  banner = Banner.create!(    title: Faker::Lorem.sentence(1).truncate(40),
-                              text:  text,
-                              style: "banner.banner-one",
-                              link:  "http://localhost:3000/proposal/#{i}",
-                              post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
-                              post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
-                              created_at: rand((Time.now - 1.week) .. Time.now))
+Setting.create(key: 'banner-style.banner-one', value: "Estilo uno")
+Setting.create(key: 'banner-style.banner-two', value: "Estilo dos")
+Setting.create(key: 'banner-style.banner-three', value: "Estilo tres")
+
+Setting.create(key: 'banner-img.banner-one', value: "Imagen uno")
+Setting.create(key: 'banner-img.banner-two', value: "Imagen dos")
+Setting.create(key: 'banner-img.banner-three', value: "Imagen tres")
+
+Proposal.last(3).each do |proposal|
+  title = Faker::Lorem.sentence(word_count = 3)
+  description = Faker::Lorem.sentence(word_count = 12)
+
+  banner = Banner.create!(title: title,
+                          description: description,
+                          style: ["banner-style.banner-style-one", "banner-style.banner-style-two",
+                                  "banner-style.banner-style-three"].sample,
+                          image: ["banner-img.banner-img-one", "banner-img.banner-img-two",
+                                  "banner-img.banner-img-three"].sample,
+                          target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                          post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
+                          post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
+                          created_at: rand((Time.now - 1.week) .. Time.now))
   puts "    #{banner.title}"
 end
